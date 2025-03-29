@@ -8,12 +8,9 @@ const numberOfLatestPostsToShow = 3;
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+
 <img src="{{ 'img/morehead.png' | url }}" alt="pixel art of a head" />
-<h3>Indie Projects</h3>
-<ul>
-	<li><a href="https://lyte2d.com">https://lyte2d.com</a> OSS/free Lua game framework. MIT license</li>
-	<li><a href="https://lmaopilot.com">https://lmaopilot.com</a> (Alpha) Simple AI code pilot for VSCode. (Previously OSS)</li>
-</ul>
+
 <h3>Socials</h3>
 <ul>
 
@@ -22,6 +19,13 @@ const numberOfLatestPostsToShow = 3;
 	<li>itch.io: <a href="https://morew4rd.itch.io">https://morew4rd.itch.io</a></li>
 	<li>website: <a href="https:morew4rd.com">https:morew4rd.com</a></li>
 </ul>
+
+<h3>Indie Projects</h3>
+<ul>
+	<li><a href="https://lyte2d.com">https://lyte2d.com</a> OSS/free Lua game framework. MIT license</li>
+	<li><a href="https://lmaopilot.com">https://lmaopilot.com</a> (Alpha) Simple AI code pilot for VSCode. (Previously OSS)</li>
+</ul>
+
 <h3>OSS projects</h3>
 <ul>
 	<li><a href="https://github.com/lyte2d/lyte2d">lyte</a> Lyte2d sources</li>
