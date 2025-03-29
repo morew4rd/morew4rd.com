@@ -25,20 +25,20 @@ const numberOfLatestPostsToShow = 3;
 #}
 </ul>
 
-<h3>Indie Projects</h3>
+<h3>Indie projects</h3>
 <ul>
 	<li><a href="https://lyte2d.com">https://lyte2d.com</a> OSS/free Lua game framework. MIT license</li>
 	<li><a href="https://lmaopilot.com">https://lmaopilot.com</a> (Alpha) Simple AI code pilot for VSCode. (Previously OSS)</li>
 </ul>
 
-<h3>OSS Projects</h3>
+<h3>OSS projects</h3>
 <ul>
 	<li><a href="https://github.com/lyte2d/lyte2d">lyte</a> Lyte2d sources</li>
 	<li><a href="https://github.com/morew4rd/ryte">ryte</a> An experiment of porting lyte core to Zig (parked)</li>
 	<li><a href="https://github.com/morew4rd/moreward.h">moreward.h</a> Base C library </li>
 </ul>
 
-<h3>Blogs (Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %})</h3>
+<h3>Latest {{ latestPostsCount }} blog post{% if latestPostsCount != 1 %}s{% endif %})</h3>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
