@@ -5,11 +5,13 @@ date: 2025-03-28
 tags: announcement
 ---
 
+## Hi :)
+
 Previously I had a manually edited site static, but no easy way to do markdown to HTML conversions.
 
 Eleventy seems simple enough.
 
-## Hello World
+## Bye
 
 So this is the first post, sort of opening the door.
 

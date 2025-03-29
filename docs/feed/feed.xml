@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Blog Title</title>
+  <subtitle>This is a longer description about your blog.</subtitle>
+  <link href="https://example.com/feed/feed.xml" rel="self" />
+  <link href="https://example.com/" />
+  <updated>2025-03-28T00:00:00Z</updated>
+  <id>https://example.com/</id>
+  <author>
+    <name>Your Name</name>
+  </author>
+  <entry>
+    <title>Hello World Number 2 (with code)</title>
+    <link href="https://example.com/blog/test_blog_with_code/example_post/" />
+    <updated>2025-03-28T00:00:00Z</updated>
+    <id>https://example.com/blog/test_blog_with_code/example_post/</id>
+    <content type="html">&lt;h2 id=&quot;some-lua-code&quot;&gt;Some Lua code :)&lt;/h2&gt;
+&lt;p&gt;This is just a sample to test the blog post&lt;/p&gt;
+&lt;pre class=&quot;language-lua&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lua&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;-- lyte sample&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; total_time &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; SCALE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;-- image_1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; image_1 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;load_image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;assets/hero.png&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; sprite_1_tick &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; sprite_1_numticks &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dt&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;-- UPDATE&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;-- dt is the time (in seconds) from last tick to now&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;-- keep track of total time&lt;/span&gt;
+    total_time &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; total_time &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; dt
+
+    &lt;span class=&quot;token comment&quot;&gt;-- control the sprite tick draw with space or left mouse button&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;is_key_pressed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;space&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;or&lt;/span&gt; lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;is_mouse_pressed&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;mb1&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+        sprite_1_tick &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sprite_1_tick &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt; sprite_1_numticks
+    &lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;-- scaled down width/height&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; W &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; width&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;SCALE
+    &lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; H &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; height&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;SCALE
+
+    &lt;span class=&quot;token comment&quot;&gt;-- x position will change based on time&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; x_pos &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; W&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;total_time&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;W&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;-- y position middle of the screen (even when window is resized)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; y_pos &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; H&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;-- DRAW&lt;/span&gt;
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push_matrix&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;scale&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;SCALE&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; SCALE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;draw_image_rect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;image_1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; x_pos&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; y_pos&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;sprite_1_tick&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;pop_matrix&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;-- background with a &quot;pulsating&quot; alpha&lt;/span&gt;
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;set_color&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;total_time&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    lyte&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;draw_text&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;SPACE or LMB: change sprite tick&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; height&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <link href="https://example.com/blog/hello/" />
+    <updated>2025-03-28T00:00:00Z</updated>
+    <id>https://example.com/blog/hello/</id>
+    <content type="html">&lt;h2 id=&quot;hi&quot;&gt;Hi :)&lt;/h2&gt;
+&lt;p&gt;Previously I had a manually edited site static, but no easy way to do markdown to HTML conversions.&lt;/p&gt;
+&lt;p&gt;Eleventy seems simple enough.&lt;/p&gt;
+&lt;h2 id=&quot;bye&quot;&gt;Bye&lt;/h2&gt;
+&lt;p&gt;So this is the first post, sort of opening the door.&lt;/p&gt;
+&lt;p&gt;See you guys soon.&lt;/p&gt;
+</content>
+  </entry>
+</feed>
