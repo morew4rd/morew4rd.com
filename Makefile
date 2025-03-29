@@ -11,14 +11,14 @@ show-help: ## show help
 
 ELEV = npx @11ty/eleventy  --output=docs
 
-watch-dev: ## serve dev server
-	${ELEV} --serve
-
-CLEAN-site: ## clean docs folder (CAREFUL)
+clean-site: ## clean docs folder (CAREFUL)
 	rm -rf docs
 	mkdir docs
 
-build-site: ## build site
+watch-dev: clean-site ## serve dev server in watch mode
+	${ELEV} --serve
+
+build-site: clean-site ## build site
 	${ELEV}
 
 serve-site: ## serve from docs for testing
