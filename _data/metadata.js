@@ -1,5 +1,5 @@
 export default {
-	title: "morew4rd.com",
+	title: "morew4rd dot com",
 	url: "https://morew4rd.com",
 	language: "en",
 	description: "I am writing about my thoughts and experiences.",
