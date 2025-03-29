@@ -15,7 +15,7 @@
     <link href="https://example.com/blog/test_blog_with_code/example_post/" />
     <updated>2025-03-28T00:00:00Z</updated>
     <id>https://example.com/blog/test_blog_with_code/example_post/</id>
-    <content type="html">&lt;h2 id=&quot;some-lua-code&quot;&gt;Some Lua code :)&lt;/h2&gt;
+    <content type="html">&lt;h2 id=&quot;some-lua-code&quot;&gt;Some Lua code&lt;/h2&gt;
 &lt;p&gt;This is just a sample to test the blog post&lt;/p&gt;
 &lt;pre class=&quot;language-lua&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-lua&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;-- lyte sample&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;local&lt;/span&gt; total_time &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;

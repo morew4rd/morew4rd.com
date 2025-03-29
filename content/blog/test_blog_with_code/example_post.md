@@ -5,7 +5,7 @@ date: 2025-03-28
 tags: announcement
 ---
 
-## Some Lua code :)
+## Some Lua code
 
 This is just a sample to test the blog post
 

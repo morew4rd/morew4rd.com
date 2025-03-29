@@ -1,7 +1,9 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Menlo, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	/* --font-family: -apple-system, system-ui, sans-serif; */
+	--font-family: system-ui, sans-serif;
+	/* BELOW is unused... prism.js seems to override it. */
+	/* --font-family-monospace: monospace, Lucida Console,  Menlo, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace; */
 }
 
 /* Theme colors */
@@ -50,7 +52,7 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family);
-	/* font-size: large; */
+	font-size: medium;
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
@@ -152,7 +154,12 @@ table th {
 
 pre,
 code {
-	font-family: var(--font-family-monospace);
+	/* font-family: var(--font-family-monospace); */
+	/* font-size: 44px; */
+}
+
+.language-lua {
+	font-size: 0.5rem; /* Adjust the size as needed */
 }
 
 pre:not([class*="language-"]) {

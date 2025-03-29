@@ -7,6 +7,10 @@ pre[class*="language-diff-"] {
 	padding-left: var(--eleventy-code-padding);
 	padding-right: var(--eleventy-code-padding);
 }
+/* MG */
+pre[class*="language-"] {
+	font-size: 0.8em;
+}
 .token.deleted {
 	background-color: hsl(0, 51%, 37%);
 	color: inherit;
