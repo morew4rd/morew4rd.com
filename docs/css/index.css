@@ -44,7 +44,8 @@
 }
 
 @view-transition {
-	navigation: auto;
+	/* MG: removed. Instant change is better */
+	/* navigation: auto; */
 }
 
 html,
