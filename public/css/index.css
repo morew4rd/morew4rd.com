@@ -22,7 +22,7 @@
 	--syntax-tab-size: 2;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--color-gray-20: #e0e0e0;
 		--color-gray-50: #C0C0C0;
@@ -35,7 +35,7 @@
 
 		--background-color: #15202b;
 	}
-} */
+}
 
 
 /* Global stylesheet */
