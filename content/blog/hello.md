@@ -2,7 +2,7 @@
 title: Hello World
 description: Just updated my site to 11ty
 date: 2025-03-28
-tags: announcement
+# tags: announcement
 ---
 
 ## Hi :)
