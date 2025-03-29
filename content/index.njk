@@ -38,7 +38,7 @@ const numberOfLatestPostsToShow = 3;
 	<li><a href="https://github.com/morew4rd/moreward.h">moreward.h</a> Base C library </li>
 </ul>
 
-<h3>Latest {{ latestPostsCount }} blog post{% if latestPostsCount != 1 %}s{% endif %})</h3>
+<h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
