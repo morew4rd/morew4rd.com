@@ -3,9 +3,16 @@ title: Makefile scripting
 description: Using Makefile and make for scripting and orchestration
 date: 2025-03-28T19:00
 draft: true
-order: 3
-# tags: announcement
 ---
+
+## DRAFT TBD
+- remove "learn" but provide links
+- screenshots
+- explanation of .PHONY
+- default target
+- dependencies
+- ...
+
 
 ## 'make' and Makefiles
 
@@ -44,3 +51,4 @@ run-test: clean-test config-test build-test ## rebuild and run test
 	${BUILD_DIR}/test > ${BUILD_DIR}/a.txt
 	cat ${BUILD_DIR}/a.txt
 ```
+
