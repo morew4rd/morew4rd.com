@@ -33,7 +33,8 @@
 		--text-color-link-active: #1a96fc;
 		--text-color-link-visited: #1a96fc;
 
-		--background-color: #15202b;
+		/* --background-color: #15202b; */
+		--background-color: #000000;
 	}
 }
 
