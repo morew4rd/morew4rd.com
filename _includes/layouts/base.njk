@@ -34,7 +34,11 @@
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
 		{#- Add the heading-anchors web component to the JavaScript bundle #}
-		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		{#
+		  MG: removed these
+		  {%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		#}
+
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -54,9 +58,13 @@
 		</header>
 
 		<main id="skip">
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
+			{{ content | safe }}
+			{#
+				MG: removed these
+				<heading-anchors>
+					{{ content | safe }}
+				</heading-anchors>
+			#}
 		</main>
 
 		{# <footer>

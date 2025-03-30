@@ -5,13 +5,15 @@ date: 2025-03-28T11:00
 # tags: announcement
 ---
 
-## Hi :)
+## Hi
 
 Previously I had a manually edited site static, but no easy way to do markdown to HTML conversions.
 
 Eleventy seems simple enough.
 
 ## Bye
+
+[link to hi](#hi)
 
 So this is the first post, sort of opening the door.
 

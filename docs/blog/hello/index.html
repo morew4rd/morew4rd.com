@@ -206,14 +206,14 @@ pre[class*="language-"] {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
+		--color-gray-20: #444;
 		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
+		--color-gray-90: #f0e0e0;
 
 
-		--text-color-link: #1493fb;
-		--text-color-link-active: #1493fb;
-		--text-color-link-visited: #1493fb;
+		--text-color-link: #1a96fc;
+		--text-color-link-active: #1a96fc;
+		--text-color-link-visited: #1a96fc;
 
 		--background-color: #15202b;
 	}
@@ -290,13 +290,16 @@ li {
 }
 
 a[href] {
+	/* color: var(--color-gray-90); */
 	color: var(--text-color-link);
 }
 a[href]:visited {
+	/* color: var(--color-gray-90); */
 	color: var(--text-color-link-visited);
 }
 a[href]:hover,
 a[href]:active {
+	/* color: var(--color-gray-90); */
 	color: var(--text-color-link-active);
 }
 
@@ -309,7 +312,7 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	/* border-bottom: 1px dashed var(--color-gray-20); */
 }
 
 .links-nextprev {
@@ -317,7 +320,7 @@ header {
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
+	/* border-top: 1px dashed var(--color-gray-20); */
 	padding: 1em 0;
 }
 .links-nextprev > * {
@@ -341,9 +344,6 @@ code {
 	/* font-size: 44px; */
 }
 
-.language-lua {
-	font-size: 0.5rem; /* Adjust the size as needed */
-}
 
 pre:not([class*="language-"]) {
 	margin: .5em 0;
@@ -475,6 +475,8 @@ header {
 .mg-text-center {
 	text-align: center;
 }</style>
+		
+
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -491,18 +493,18 @@ header {
 		</header>
 
 		<main id="skip">
-			<heading-anchors>
-				
+			
 <h1 id="hello-world">Hello World</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="2025-03-28">28 March 2025</time></li>
 </ul>
 
-<h2 id="hi">Hi :)</h2>
+<h2 id="hi">Hi</h2>
 <p>Previously I had a manually edited site static, but no easy way to do markdown to HTML conversions.</p>
 <p>Eleventy seems simple enough.</p>
 <h2 id="bye">Bye</h2>
+<p><a href="#hi">link to hi</a></p>
 <p>So this is the first post, sort of opening the door.</p>
 <p>See you guys soon.</p>
 
@@ -511,12 +513,12 @@ header {
 
 
 
-			</heading-anchors>
+			
 		</main>
 
 		
 
-		<!-- This page `/blog/hello/` was built on 2025-03-29T08:53:05.999Z -->
-		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
+		<!-- This page `/blog/hello/` was built on 2025-03-30T07:32:55.438Z -->
+		
 	</body>
 </html>

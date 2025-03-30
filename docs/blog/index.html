@@ -7,7 +7,7 @@
 		<meta name="description" content="I am writing about my thoughts and experiences.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="morew4rd dot com">
 		
-		<style>.postlist { counter-reset: start-from 3 }
+		<style>.postlist { counter-reset: start-from 5 }
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
@@ -35,14 +35,14 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
+		--color-gray-20: #444;
 		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
+		--color-gray-90: #f0e0e0;
 
 
-		--text-color-link: #1493fb;
-		--text-color-link-active: #1493fb;
-		--text-color-link-visited: #1493fb;
+		--text-color-link: #1a96fc;
+		--text-color-link-active: #1a96fc;
+		--text-color-link-visited: #1a96fc;
 
 		--background-color: #15202b;
 	}
@@ -119,13 +119,16 @@ li {
 }
 
 a[href] {
+	/* color: var(--color-gray-90); */
 	color: var(--text-color-link);
 }
 a[href]:visited {
+	/* color: var(--color-gray-90); */
 	color: var(--text-color-link-visited);
 }
 a[href]:hover,
 a[href]:active {
+	/* color: var(--color-gray-90); */
 	color: var(--text-color-link-active);
 }
 
@@ -138,7 +141,7 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	/* border-bottom: 1px dashed var(--color-gray-20); */
 }
 
 .links-nextprev {
@@ -146,7 +149,7 @@ header {
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
+	/* border-top: 1px dashed var(--color-gray-20); */
 	padding: 1em 0;
 }
 .links-nextprev > * {
@@ -170,9 +173,6 @@ code {
 	/* font-size: 44px; */
 }
 
-.language-lua {
-	font-size: 0.5rem; /* Adjust the size as needed */
-}
 
 pre:not([class*="language-"]) {
 	margin: .5em 0;
@@ -304,6 +304,8 @@ header {
 .mg-text-center {
 	text-align: center;
 }</style>
+		
+
 	</head>
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
@@ -320,13 +322,20 @@ header {
 		</header>
 
 		<main id="skip">
-			<heading-anchors>
-				
+			
 <h3 id="blog-archive">Blog Archive</h3>
 
 
 
 <ol reversed="" class="postlist">
+	<li class="postlist-item">
+		<a href="/blog/docker/" class="postlist-link">Docker FTW</a>
+		<time class="postlist-date" datetime="2025-03-29">March 2025</time>
+	</li>
+	<li class="postlist-item">
+		<a href="/blog/makefile/" class="postlist-link">Makefile scripting</a>
+		<time class="postlist-date" datetime="2025-03-28">March 2025</time>
+	</li>
 	<li class="postlist-item">
 		<a href="/blog/test_blog_with_code/example_post/" class="postlist-link">Hello World Number 2 (with code)</a>
 		<time class="postlist-date" datetime="2025-03-28">March 2025</time>
@@ -339,12 +348,12 @@ header {
 
 
 
-			</heading-anchors>
+			
 		</main>
 
 		
 
-		<!-- This page `/blog/` was built on 2025-03-29T08:53:05.999Z -->
-		<script type="module" src="/dist/xbxy_EL6cU.js"></script>
+		<!-- This page `/blog/` was built on 2025-03-30T07:32:55.439Z -->
+		
 	</body>
 </html>
