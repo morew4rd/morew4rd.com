@@ -12,11 +12,6 @@
 	</url>
 	
 	<url>
-		<loc>https://morew4rd.com/blog/makefile/</loc>
-		<lastmod>2025-03-28</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://morew4rd.com/blog/</loc>
 		<lastmod>2025-03-28</lastmod>
 	</url>
@@ -29,10 +24,5 @@
 	<url>
 		<loc>https://morew4rd.com/tags/</loc>
 		<lastmod>2025-03-28</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://morew4rd.com/blog/docker/</loc>
-		<lastmod>2025-03-29</lastmod>
 	</url>
 </urlset>
