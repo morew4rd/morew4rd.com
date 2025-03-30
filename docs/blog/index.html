@@ -19,33 +19,27 @@
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
+	--color-gray-00: #ffffff;
 	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--color-gray-99: #111;
+	--color-blue-link: #1474c4;
 
-	--background-color: #fff;
+	--background-color: var(--color-gray-00);
+	--text-color: var(--color-gray-99);
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #216ea2;
-	--text-color-link-active: #216ea2;
-	--text-color-link-visited: #216ea2;
+	--text-color-link: var(--color-blue-link);
+	--text-color-link-active: var(--color-blue-link);
+	--text-color-link-visited: var(--color-blue-link);
 
 	--syntax-tab-size: 2;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #444;
+		--color-gray-00: #000000;
 		--color-gray-50: #C0C0C0;
-		--color-gray-90: #f0e0e0;
-
-
-		--text-color-link: #1a96fc;
-		--text-color-link-active: #1a96fc;
-		--text-color-link-visited: #1a96fc;
-
-		/* --background-color: #15202b; */
-		--background-color: #000000;
+		--color-gray-99: #e0e0e0;
+		--color-blue-link: #42a0ed;
 	}
 }
 
@@ -120,16 +114,16 @@ li {
 }
 
 a[href] {
-	/* color: var(--color-gray-90); */
+	/* color: var(--color-gray-99); */
 	color: var(--text-color-link);
 }
 a[href]:visited {
-	/* color: var(--color-gray-90); */
+	/* color: var(--color-gray-99); */
 	color: var(--text-color-link-visited);
 }
 a[href]:hover,
 a[href]:active {
-	/* color: var(--color-gray-90); */
+	/* color: var(--color-gray-99); */
 	color: var(--text-color-link-active);
 }
 
@@ -142,7 +136,7 @@ main :first-child {
 }
 
 header {
-	/* border-bottom: 1px dashed var(--color-gray-20); */
+	/* border-bottom: 1px dashed var(--color-gray-00); */
 }
 
 .links-nextprev {
@@ -150,7 +144,7 @@ header {
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	/* border-top: 1px dashed var(--color-gray-20); */
+	/* border-top: 1px dashed var(--color-gray-00); */
 	padding: 1em 0;
 }
 .links-nextprev > * {
@@ -255,7 +249,7 @@ header {
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+	color: var(--color-gray-99);
 }
 .postlist-date {
 	word-spacing: -0.5px;
@@ -346,7 +340,7 @@ header {
 
 		
 
-		<!-- This page `/blog/` was built on 2025-03-30T19:43:28.075Z -->
+		<!-- This page `/blog/` was built on 2025-03-30T19:57:56.070Z -->
 		
 	</body>
 </html>
