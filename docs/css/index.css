@@ -1,7 +1,7 @@
 /* Defaults */
 :root {
-	/* --font-family: -apple-system, system-ui, sans-serif; */
-	--font-family: system-ui, sans-serif;
+	--font-family: -apple-system, system-ui, sans-serif;
+	/* --font-family: system-ui, sans-serif; */
 	/* BELOW is unused... prism.js seems to override it. */
 	/* --font-family-monospace: monospace, Lucida Console,  Menlo, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace; */
 }
@@ -48,7 +48,6 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family);
-	font-size: medium;
 	color: var(--text-color);
 	background-color: var(--background-color);
 }

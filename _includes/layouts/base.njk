@@ -45,7 +45,10 @@
 
 		{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
 		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+			{# <a href="/" class="home-link">{{ metadata.title }}</a> #}
+			<a href="/" class="home-link">
+				<img src="{{ '/img/morehead.png' | url }}" style="width: 2.5em; height: auto;"  alt="pixel art of a head" />
+			</a>
 
 			<nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>

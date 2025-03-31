@@ -182,8 +182,8 @@ pre[class*="language-"] {
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
-	/* --font-family: -apple-system, system-ui, sans-serif; */
-	--font-family: system-ui, sans-serif;
+	--font-family: -apple-system, system-ui, sans-serif;
+	/* --font-family: system-ui, sans-serif; */
 	/* BELOW is unused... prism.js seems to override it. */
 	/* --font-family-monospace: monospace, Lucida Console,  Menlo, Monaco, Consolas, Andale Mono WT, Andale Mono, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace; */
 }
@@ -230,7 +230,6 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: var(--font-family);
-	font-size: medium;
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
@@ -476,7 +475,10 @@ header {
 	<body>
 		<a href="#skip" class="visually-hidden">Skip to main content</a>
 		<header>
-			<a href="/" class="home-link">morew4rd dot com</a>
+			
+			<a href="/" class="home-link">
+				<picture><source type="image/avif" srcset="/img/GKfuRyLXwA-198.avif 198w"><source type="image/webp" srcset="/img/GKfuRyLXwA-198.webp 198w"><img loading="lazy" decoding="async" src="/img/GKfuRyLXwA-198.png" style="width: 2.5em; height: auto;" alt="pixel art of a head" width="198" height="198"></picture>
+			</a>
 
 			<nav>
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
@@ -548,7 +550,7 @@ header {
 
 		
 
-		<!-- This page `/blog/test_blog_with_code/example_post/` was built on 2025-03-30T19:57:56.070Z -->
+		<!-- This page `/blog/test_blog_with_code/example_post/` was built on 2025-03-31T22:28:32.558Z -->
 		
 	</body>
 </html>
