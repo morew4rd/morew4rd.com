@@ -3,6 +3,7 @@ title: Hello World Number 2 (with code)
 description: Testing code snippets
 date: 2025-03-28T11:30
 # tags: ["announcement", "other"]
+draft: true
 ---
 
 ## Some Lua code
