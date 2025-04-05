@@ -1,6 +1,5 @@
 ---
-title: Makefile scripting
-description: Using Makefile and make for scripting and orchestration
+title: Makefile For Scripting, Dockerfile For Repeatability
 date: 2025-04-05T00:00
 draft: true
 ---
@@ -27,16 +26,14 @@ The example below tells a way to do this. But you can of course invent your own 
 ```make
 -default: show-help
 
-##########
-show-help: ## show help
+show-help: ## show targets and variables
 	@echo "Available targets:"
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-30s\033[0m %s\n", $$1, $$2}'
 	@echo "Defined variables:"
 	@grep -E '^[a-zA-Z0-9_]+\s*=\s*[^#]*## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = "\s*=\s*.*?## "}; {printf "  \033[33m%-30s\033[0m %s\n", $$1, $$2}'
-##########
 
 
-BUILD_DIR = _b
+BUILD_DIR = _b 	## build output directory
 
 clean-test: ## clean test build
 	rm -rf ${BUILD_DIR}
