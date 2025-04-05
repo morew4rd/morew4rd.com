@@ -7,13 +7,13 @@ date: 2025-04-04T20:20
 
 ### Welcome to my blog
 
-I've setup eleventy to get some simple site generation going and replace my janky lua scripts. It has [a nice sample](https://github.com/11ty/eleventy-base-blog) that I used to get started. I simplified my version even further.
+I've setup _eleventy_ to get some simple site generation going and replace my janky lua scripts. It has [a nice sample](https://github.com/11ty/eleventy-base-blog) that I used to get started. I simplified my version even further.
 
 Played with it a bit and so far so good.
 
 ### What will I talk about?
 
-Take a look at my ~~twitter~~[x.com](https://x.com/morew4rd) feed, it will likely look similar. But more in depth. Probably 😅
+Take a look at my [~~twitter~~ x.com feed](https://x.com/morew4rd), it will likely look similar. But more in depth. Probably 😅
 
 Truth is it's impossible to predict the future, so we'll see.
 
