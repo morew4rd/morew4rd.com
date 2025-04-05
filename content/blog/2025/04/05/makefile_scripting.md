@@ -1,5 +1,5 @@
 ---
-title: Makefiles For Scripting
+title: Makefiles for scripting
 date: 2025-04-05T00:00
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Hello Anon
+title: Hello anon
 date: 2025-04-04T20:20
 # description: Just updated my site to 11ty
 # tags: [announcement, test, lol]
