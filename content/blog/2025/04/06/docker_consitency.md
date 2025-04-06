@@ -6,7 +6,7 @@ date: 2025-04-06T09:30
 
 ## Docker and docker-compose
 
-I run all my non-static sites/webapps on a small VPS. I have very little installed on the VPS. For example, although most of my sites are node.js these days, I don't have node or npm installed there. But I do I do have `docker` along with `make` and `git` installed.
+I run all my non-static sites/webapps on a small VPS. I have very little installed on the VPS. For example, although most of my sites are node.js these days, I don't have node or npm installed there. But I do have `docker` along with `make` and `git` installed.
 
 ## VPS use
 
