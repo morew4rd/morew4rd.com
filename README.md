@@ -1,6 +1,6 @@
 # Moreward's website/blog
 
-Based on eleventy base blog.
+Based on eleventy base blog. Hosted at https://morew4rd.com
 
 # eleventy-base-blog v9
 
