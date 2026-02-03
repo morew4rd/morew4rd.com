@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="https://morew4rd.com/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>moreward&#39;s posts</title>
+    <link>https://morew4rd.com/</link>
+    <atom:link href="https://morew4rd.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>moreward&#39;s thoughts</description>
+    <language>en</language>
+    <item>
+      <title></title>
+      <link>https://morew4rd.com/blog/shorts/0003/</link>
+      <description>&lt;p&gt;Build for a purpose. Don&#39;t spend time on unnecessary tech noodling.
+Watch this Ted Bendixson&#39;s &amp;quot;Better Software Conference 2025&amp;quot; talk on &lt;a href=&quot;https://www.youtube.com/watch?v=Ca53JTohdN4&quot;&gt;youtube&lt;/a&gt; for some inspo.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 02 Feb 2026 23:03:00 PST</pubDate>
+      <dc:creator>moreward</dc:creator>
+      <guid>https://morew4rd.com/blog/shorts/0003/</guid>
+    </item>
+    <item>
+      <title></title>
+      <link>https://morew4rd.com/blog/shorts/0002/</link>
+      <description>&lt;p&gt;(Test post) OK, I think it kinda works and looks OK now. (BTW we need light mode)&lt;/p&gt;
+</description>
+      <pubDate>Mon, 02 Feb 2026 13:14:00 PST</pubDate>
+      <dc:creator>moreward</dc:creator>
+      <guid>https://morew4rd.com/blog/shorts/0002/</guid>
+    </item>
+    <item>
+      <title></title>
+      <link>https://morew4rd.com/blog/shorts/0001/</link>
+      <description>&lt;p&gt;I just enabled short posts on my blog. Perhaps I&#39;ll also see if I can make it easier to just post here whenever I want. Should be just a simple script.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 02 Feb 2026 11:30:00 PST</pubDate>
+      <dc:creator>moreward</dc:creator>
+      <guid>https://morew4rd.com/blog/shorts/0001/</guid>
+    </item>
+    <item>
+      <title>Docker for consistency</title>
+      <link>https://morew4rd.com/blog/2025/04/06/docker_consitency/</link>
+      <description>&lt;h2 id=&quot;docker-and-docker-compose&quot;&gt;Docker and docker-compose&lt;/h2&gt;
+&lt;p&gt;I run all my non-static sites/webapps on a small VPS. I have very little installed on the VPS. For example, although most of my sites are node.js these days, I don&#39;t have node or npm installed there. But I do have &lt;code&gt;docker&lt;/code&gt; along with &lt;code&gt;make&lt;/code&gt; and &lt;code&gt;git&lt;/code&gt; installed.&lt;/p&gt;
+&lt;h2 id=&quot;vps-use&quot;&gt;VPS use&lt;/h2&gt;
+&lt;p&gt;Sites, DBs, helpers (like monitoring tools) all run in docker containers, and are kept up via &lt;code&gt;docker compose&lt;/code&gt;. This is sort of a setup-and-forget thing for the most part which is nice. But see &lt;a href=&quot;https://morew4rd.com/blog/2025/04/06/docker_consitency/#beware&quot;&gt;the beware section below&lt;/a&gt; for some warnings!&lt;/p&gt;
+&lt;h2 id=&quot;devbox-use-for-web-dev&quot;&gt;Devbox use for web dev&lt;/h2&gt;
+&lt;p&gt;Since I use the same image locally on my MacBook, my test environment during development is mostly a good representative of livesite environment.&lt;/p&gt;
+&lt;h2 id=&quot;consistent-builds-for-native-dev&quot;&gt;Consistent builds for native dev&lt;/h2&gt;
+&lt;p&gt;This also applies for projects that need build steps. Same build runs on my macbook and github CIs, for example. You can build Linux or Windows binaries (via mingw) or WASM (via emscripten) from a single image!&lt;/p&gt;
+&lt;h2 id=&quot;use-for-older-libc-linking&quot;&gt;Use for older libc linking&lt;/h2&gt;
+&lt;p&gt;Standard practice in linux is to dynamically link your apps against the system libc. However, there re good use cases for static linkink as well. The trouble is this is not well supported. If you, for example build and statically link your app in Ubuntu 24.04, there&#39;s a chance that you can&#39;t run it on Ubuntu 20.04 or other distros with different libc builds.&lt;/p&gt;
+&lt;p&gt;In this case, just use a Docker based on Ubuntu 18 or whatever minimum you&#39;d like to match.&lt;/p&gt;
+&lt;p&gt;Lyte2D builds use this mechanism to get a broader set of linux distributions supported with a single binary.&lt;/p&gt;
+&lt;p&gt;(Though there seems to be &lt;a href=&quot;https://jangafx.com/insights/linux-binary-compatibility&quot;&gt;a new sort of solution&lt;/a&gt; that I should investigate.)&lt;/p&gt;
+&lt;h2 id=&quot;beware&quot;&gt;Beware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Open ports &amp;amp; security concerns: Unfortunately whenever you open a port for your container it makes a hole in your host system&#39;s firewall. Some &lt;a href=&quot;https://www.reddit.com/r/selfhosted/comments/1cv2l3q/security_psa_for_anyone_using_docker_on_a/?rdt=53453&quot;&gt;reddit notes&lt;/a&gt;. There are workarounds with various tradeoffs. I personally chose to disable iptables completely for docker on my VPS. (Ask me if you need more details.)&lt;/li&gt;
+&lt;li&gt;OOMs: Docker constainers have default limitations for memory use. And if you pass them your image gets killed. Keep this in mind for your testing strategy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;alternatives&quot;&gt;Alternatives?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You can run things on the host. Could be managable but can get chaotic. Easier to make mistakes.&lt;/li&gt;
+&lt;li&gt;You can use something like Nix (you&#39;d love this one if you&#39;re a Rust or Haskell person, for example.)&lt;/li&gt;
+&lt;li&gt;You can use VMs (but these would be more expensive both in $$$ and in time.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I personally found Docker (+ &lt;a href=&quot;https://morew4rd.com/blog/2025/04/05/makefile_scripting/&quot;&gt;make&lt;/a&gt;) to be a sweet spot for a high capacity/complexity ratio.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 06 Apr 2025 02:30:00 PDT</pubDate>
+      <dc:creator>moreward</dc:creator>
+      <guid>https://morew4rd.com/blog/2025/04/06/docker_consitency/</guid>
+    </item>
+    <item>
+      <title>Makefiles for scripting</title>
+      <link>https://morew4rd.com/blog/2025/04/05/makefile_scripting/</link>
+      <description>&lt;p&gt;GNU &lt;code&gt;make&lt;/code&gt; is an old tool designed to build C codebases. I don&#39;t use it for that purpose though. For projects that are larger than a few files, I just pull cmake these days.&lt;/p&gt;
+&lt;p&gt;But... make itself is still very useful to get basic scripting going in my codebases and elsewhere.&lt;/p&gt;
+&lt;p&gt;I use Makefiles to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Call cmake/zig build/npm etc with various options to build projects&lt;/li&gt;
+&lt;li&gt;Execute tests&lt;/li&gt;
+&lt;li&gt;Build/run docker images&lt;/li&gt;
+&lt;li&gt;Deploy sites and apps&lt;/li&gt;
+&lt;li&gt;And more...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;basics-of-make&quot;&gt;Basics of make&lt;/h2&gt;
+&lt;p&gt;So how do you use it? You&#39;d typically use it with a dev project, so let&#39;s assume you&#39;re in your project&#39;s top level directory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You write a &lt;code&gt;Makefile&lt;/code&gt;, like the one below&lt;/li&gt;
+&lt;li&gt;Call the default target with &lt;code&gt;make&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Call any other target with &lt;code&gt;make config-test&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Override variables with &lt;code&gt;make build-tests BUILD_DIR=../tmp/test&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&#39;s a very simple example:&lt;/p&gt;
+&lt;pre class=&quot;language-Makefile&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-Makefile&quot;&gt;# Makefile comments start with a `#` and run till the end of the line.
+
+# Targets are defined with a name and a colon.  First ever target in the file is the &quot;default&quot;
+# It is the target that runs if there are no arguments passed to `make`.
+# The dependencies of the target are listed after the colon, whitespace separated
+# Those are executed before the target tasks
+# Tasks that the target will run in cmdline, one by one, are listed below the target name, indented with `tab`s (not spaces!)
+
+my-default-target: run-tests
+	echo &quot;done.&quot;
+
+# You can define variables like so
+# You can override these varibles from command line while invoking make.
+
+BUILD_DIR = ./_build
+
+# Some other targets below:
+
+clean-test:
+	rm -rf ${BUILD_DIR}
+
+config-test:
+	mkdir -p ${BUILD_DIR}
+
+build-test:
+	cc -o ${BUILD_DIR}/test -I src src/apic.c test/test.c
+
+# This is the target that `my-default-target` depends on.
+# And it depends on a few others.
+
+run-test: clean-test config-test build-test
+	${BUILD_DIR}/test &gt; ${BUILD_DIR}/a.txt
+	cat ${BUILD_DIR}/a.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The idea is, instead of many script files, all scripting tasks are contained in a single location. In zsh (and others probably) you can get a tab completion for the target names, so it&#39;s very comfy.&lt;/p&gt;
+&lt;h2 id=&quot;be-careful-with-weird-parts&quot;&gt;Be careful with &amp;quot;weird&amp;quot; parts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Indentation should be done with tabs. Editors usually are aware of this, at least vscode is.&lt;/li&gt;
+&lt;li&gt;Target names should not match the files in the folder where Makefile resides. This is due to the fact that &lt;code&gt;make&lt;/code&gt; is actually made to build &lt;code&gt;NAME.c&lt;/code&gt; files. If you have to have targets matching filenames, look up &lt;code&gt;.PHONY&lt;/code&gt; targets. In order to keep things simple, I use a &lt;code&gt;-&lt;/code&gt; in my target names and I almost never have filenames with that.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;advanced-zsh-tab-completions&quot;&gt;Advanced: zsh tab completions&lt;/h2&gt;
+&lt;p&gt;Add the following in your &lt;code&gt;~/.zshrc&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-sh&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# makefile completions&lt;/span&gt;
+autoload &lt;span class=&quot;token parameter variable&quot;&gt;-Uz&lt;/span&gt; compinit
+compinit
+&lt;span class=&quot;token comment&quot;&gt;# only makefile targets, not files!&lt;/span&gt;
+zstyle &lt;span class=&quot;token string&quot;&gt;&#39;:completion::complete:make::&#39;&lt;/span&gt; tag-order targets variables&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;advanced-show-help-target&quot;&gt;Advanced: &lt;code&gt;show-help&lt;/code&gt; target&lt;/h2&gt;
+&lt;p&gt;See this example, it&#39;s actually this blog&#39;s current &lt;code&gt;Makefile&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;language-make&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-make&quot;&gt;-default: watch-dev
+
+##########
+show-help: ## show help
+	@echo &quot;Available targets:&quot;
+	@grep -E &#39;^[a-zA-Z0-9_-]+:.*?## .*$$&#39; $(MAKEFILE_LIST) | sort | awk &#39;BEGIN {FS = &quot;:.*?## &quot;}; {printf &quot;  &#92;033[36m%-30s&#92;033[0m %s&#92;n&quot;, $$1, $$2}&#39;
+	@echo &quot;Defined variables:&quot;
+	@grep -E &#39;^[a-zA-Z0-9_]+&#92;s*=&#92;s*[^#]*## .*$$&#39; $(MAKEFILE_LIST) | sort | awk &#39;BEGIN {FS = &quot;&#92;s*=&#92;s*.*?## &quot;}; {printf &quot;  &#92;033[33m%-30s&#92;033[0m %s&#92;n&quot;, $$1, $$2}&#39;
+##########
+
+
+ELEV = npx @11ty/eleventy  --output=docs
+
+clean-site: ## clean docs folder (CAREFUL)
+	rm -rf docs
+	mkdir docs
+
+watch-dev: clean-site ## serve dev server in watch mode
+	${ELEV} --serve
+
+build-site: clean-site ## build site
+	${ELEV}
+
+serve-site: ## serve from docs for testing
+	npx http-server docs
+
+DEPLOY-SITE: build-site  ## DEPLOYS TO PROD
+	git add -A
+	git commit -m &quot;update&quot;
+	git push origin main&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this version, we have a &lt;code&gt;show-help&lt;/code&gt; target which is also set to display the list of targets and variables with some shell magic.  All the targets and variables that have &lt;code&gt;## ...&lt;/code&gt; comments after them will be listed, along with the comment, which is supposed to be the help text for that target/variable.&lt;/p&gt;
+&lt;pre class=&quot;language-sh&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-sh&quot;&gt;mg ~/code/morew4rd.com $ &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt; show-help
+Available targets:
+  DEPLOY-SITE                    DEPLOYS TO PROD
+  build-site                     build site
+  clean-site                     clean docs folder &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;CAREFUL&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  serve-site                     serve from docs &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; testing
+  show-help                      show &lt;span class=&quot;token builtin class-name&quot;&gt;help&lt;/span&gt;
+  watch-dev                      serve dev server &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;watch&lt;/span&gt; mode&lt;/code&gt;&lt;/pre&gt;
+</description>
+      <pubDate>Fri, 04 Apr 2025 17:00:00 PDT</pubDate>
+      <dc:creator>moreward</dc:creator>
+      <guid>https://morew4rd.com/blog/2025/04/05/makefile_scripting/</guid>
+    </item>
+    <item>
+      <title>Hello anon</title>
+      <link>https://morew4rd.com/blog/2025/04/04/hello_anon/</link>
+      <description>&lt;h2 id=&quot;welcome-to-my-blog&quot;&gt;Welcome to my blog&lt;/h2&gt;
+&lt;p&gt;I&#39;ve setup &lt;em&gt;eleventy&lt;/em&gt; to get some simple site generation going and replace my janky lua scripts. It has &lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;a nice sample&lt;/a&gt; that I used to get started. I simplified my version even further.&lt;/p&gt;
+&lt;p&gt;Played with it a bit and so far so good.&lt;/p&gt;
+&lt;h2 id=&quot;what-will-i-talk-about&quot;&gt;What will I talk about?&lt;/h2&gt;
+&lt;p&gt;Take a look at my &lt;a href=&quot;https://x.com/morew4rd&quot;&gt;&lt;s&gt;twitter&lt;/s&gt; x.com feed&lt;/a&gt;, it will likely look similar. But more in depth. Probably 😅&lt;/p&gt;
+&lt;p&gt;Truth is it&#39;s impossible to predict the future, so we&#39;ll see.&lt;/p&gt;
+&lt;h2 id=&quot;comments&quot;&gt;Comments?&lt;/h2&gt;
+&lt;p&gt;Too much work to directly support them. Hola at me at X, email, discord or elsewhere.&lt;/p&gt;
+&lt;h2 id=&quot;who-are-you&quot;&gt;Who are you?&lt;/h2&gt;
+&lt;p&gt;I&#39;m an anon who likes to build things. Some links in the main page.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 04 Apr 2025 13:20:00 PDT</pubDate>
+      <dc:creator>moreward</dc:creator>
+      <guid>https://morew4rd.com/blog/2025/04/04/hello_anon/</guid>
+    </item>
+  </channel>
+</rss>
