@@ -224,7 +224,7 @@ header {
 	flex-wrap: wrap;
 	align-items: baseline;
 	counter-increment: start-from -1;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 .postlist-item:before {
 	display: inline-block;
@@ -245,7 +245,8 @@ header {
 	word-spacing: -0.5px;
 	color: var(--color-gray-50);
 	margin-top: 0.3rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.2rem;
+	margin-left: -1.0rem;
 }
 .postlist-link {
 	/* 19px /16 */

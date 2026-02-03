@@ -406,15 +406,17 @@ header {
 	flex-wrap: wrap;
 	align-items: baseline;
 	counter-increment: start-from -1;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
+	/* mg: this below is the number of the post (count id) */
+	/* content: "" counter(start-from, decimal-leading-zero) ". "; */
+	/* content: "> "; */
 	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
+	/* text-align: right; */
+	/* margin-left: -1.5rem; */
 }
 .postlist-date,
 .postlist-item:before {
@@ -423,6 +425,10 @@ header {
 }
 .postlist-date {
 	word-spacing: -0.5px;
+	color: var(--color-gray-50);
+	margin-top: 0.3rem;
+	margin-bottom: 0.2rem;
+	margin-left: -1.0rem;
 }
 .postlist-link {
 	/* 19px /16 */
@@ -434,6 +440,16 @@ header {
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
+}
+.postlist-nolink {
+	/* mg */
+	/* font-weight: 700; */
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	/* text-underline-position: from-font; */
+	/* text-underline-offset: 0; */
+	/* text-decoration-thickness: 1px; */
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -478,7 +494,7 @@ header {
 			
 			<a href="/" class="home-link">
 				
-				<picture><source type="image/avif" srcset="/img/GKfuRyLXwA-198.avif 198w"><source type="image/webp" srcset="/img/GKfuRyLXwA-198.webp 198w"><img loading="lazy" decoding="async" src="/img/GKfuRyLXwA-198.png" style="width: 2.5em; height: auto;" alt="pixel art of a head" width="198" height="198"></picture>
+				<picture><source type="image/avif" srcset="/.11ty/image/?src=content%2Fimg%2Fmorehead.png&width=198&format=avif&via=transform 198w"><source type="image/webp" srcset="/.11ty/image/?src=content%2Fimg%2Fmorehead.png&width=198&format=webp&via=transform 198w"><img loading="lazy" decoding="async" src="/.11ty/image/?src=content%2Fimg%2Fmorehead.png&width=198&format=png&via=transform" style="width: 2.5em; height: auto;" alt="pixel art of a head" width="198" height="198"></picture>
 			</a>
 
 			<nav>
@@ -511,7 +527,7 @@ header {
 <h1 id="makefiles-for-scripting">Makefiles for scripting</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-04-05">05 April 2025</time></li>
+	<li><time datetime="2025-04-05">2025-Apr-05, 12:00:00 AM</time></li>
 </ul>
 
 <p>GNU <code>make</code> is an old tool designed to build C codebases. I don't use it for that purpose though. For projects that are larger than a few files, I just pull cmake these days.</p>
@@ -632,7 +648,7 @@ Available targets:
 
 		
 
-		<!-- This page `/blog/2025/04/05/makefile_scripting/` was built on 2025-04-06T16:07:39.681Z -->
+		<!-- This page `/blog/2025/04/05/makefile_scripting/` was built on 2026-02-03T04:29:47.664Z -->
 		
 	</body>
 </html>

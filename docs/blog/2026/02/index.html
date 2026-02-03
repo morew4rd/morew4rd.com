@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Docker for consistency</title>
+		<title>morew4rd dot com</title>
 		<meta name="description" content="I am writing about my thoughts and experiences.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="morew4rd dot com">
 		
@@ -524,39 +524,15 @@ header {
 		<main id="skip">
 			
 
-<h1 id="docker-for-consistency">Docker for consistency</h1>
+<h1></h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2025-04-06">2025-Apr-06, 9:30:00 AM</time></li>
+	<li><time datetime="2026-02-02">2026-Feb-02, 7:30:00 PM</time></li>
 </ul>
 
-<h2 id="docker-and-docker-compose">Docker and docker-compose</h2>
-<p>I run all my non-static sites/webapps on a small VPS. I have very little installed on the VPS. For example, although most of my sites are node.js these days, I don't have node or npm installed there. But I do have <code>docker</code> along with <code>make</code> and <code>git</code> installed.</p>
-<h2 id="vps-use">VPS use</h2>
-<p>Sites, DBs, helpers (like monitoring tools) all run in docker containers, and are kept up via <code>docker compose</code>. This is sort of a setup-and-forget thing for the most part which is nice. But see <a href="#beware">the beware section below</a> for some warnings!</p>
-<h2 id="devbox-use-for-web-dev">Devbox use for web dev</h2>
-<p>Since I use the same image locally on my MacBook, my test environment during development is mostly a good representative of livesite environment.</p>
-<h2 id="consistent-builds-for-native-dev">Consistent builds for native dev</h2>
-<p>This also applies for projects that need build steps. Same build runs on my macbook and github CIs, for example. You can build Linux or Windows binaries (via mingw) or WASM (via emscripten) from a single image!</p>
-<h2 id="use-for-older-libc-linking">Use for older libc linking</h2>
-<p>Standard practice in linux is to dynamically link your apps against the system libc. However, there re good use cases for static linkink as well. The trouble is this is not well supported. If you, for example build and statically link your app in Ubuntu 24.04, there's a chance that you can't run it on Ubuntu 20.04 or other distros with different libc builds.</p>
-<p>In this case, just use a Docker based on Ubuntu 18 or whatever minimum you'd like to match.</p>
-<p>Lyte2D builds use this mechanism to get a broader set of linux distributions supported with a single binary.</p>
-<p>(Though there seems to be <a href="https://jangafx.com/insights/linux-binary-compatibility">a new sort of solution</a> that I should investigate.)</p>
-<h2 id="beware">Beware</h2>
-<ul>
-<li>Open ports &amp; security concerns: Unfortunately whenever you open a port for your container it makes a hole in your host system's firewall. Some <a href="https://www.reddit.com/r/selfhosted/comments/1cv2l3q/security_psa_for_anyone_using_docker_on_a/?rdt=53453">reddit notes</a>. There are workarounds with various tradeoffs. I personally chose to disable iptables completely for docker on my VPS. (Ask me if you need more details.)</li>
-<li>OOMs: Docker constainers have default limitations for memory use. And if you pass them your image gets killed. Keep this in mind for your testing strategy</li>
-</ul>
-<h2 id="alternatives">Alternatives?</h2>
-<ul>
-<li>You can run things on the host. Could be managable but can get chaotic. Easier to make mistakes.</li>
-<li>You can use something like Nix (you'd love this one if you're a Rust or Haskell person, for example.)</li>
-<li>You can use VMs (but these would be more expensive both in $$$ and in time.)</li>
-</ul>
-<p>I personally found Docker (+ <a href="/blog/2025/04/05/makefile_scripting/">make</a>) to be a sweet spot for a high capacity/complexity ratio.</p>
+<p>I just enabled short posts on my blog. Perhaps I'll also see if I can make it easier to just post here whenever I want. Should be just a simple script to add a file to eleventy (or update today's) and build/push.</p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/2025/04/05/makefile_scripting/">Makefiles for scripting</a></li><li class="links-nextprev-next">Next →<br><a href="/blog/2026/02/"></a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/blog/2025/04/06/docker_consitency/">Docker for consistency</a></li>
 </ul>
 
 
@@ -566,7 +542,7 @@ header {
 
 		
 
-		<!-- This page `/blog/2025/04/06/docker_consitency/` was built on 2026-02-03T04:29:47.664Z -->
+		<!-- This page `/blog/2026/02/` was built on 2026-02-03T04:29:47.664Z -->
 		
 	</body>
 </html>
