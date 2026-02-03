@@ -2,7 +2,12 @@
 <ol reversed class="postlist">
 {%- for post in postslist | reverse %}
 	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">@morew4rd - [{{ post.date | mgReadableDateTime }}]</time>
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
+			@morew4rd - [{{ post.date | mgReadableDateTime }}]
+			{% if not post.data.title %}
+				&nbsp; <a href="{{ post.url }}"> [permalink] </a>
+			{% endif %}
+		</time>
 		{% if not post.data.title %}
 			<div class="postlist-nolink">
 				{{ post.content | safe  }}

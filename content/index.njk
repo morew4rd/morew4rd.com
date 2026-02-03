@@ -1,6 +1,6 @@
 ---js
 const eleventyNavigation = {
-	key: "Home",
+	key: "About",
 	order: 1
 };
 
@@ -11,20 +11,33 @@ const numberOfLatestPostsToShow = 3;
 
 {# <img src="{{ 'img/morehead.png' | url }}" style="width: 12%; height: auto;"  alt="pixel art of a head" /> #}
 
-<h3>Projects</h3>
+
+<h3>Hello 👋</h3>
+<p>Welcome to my homepage.</p>
+<p>
+	I sometimes post here. I also link to my projects.
+	I'm currently working on a new project.
+</p>
+<p>
+	To be announced, watch this space.
+</p>
+
+<br />
+
+<h3>Previous projects</h3>
 <ul>
-	<li><a href="https://lyte2d.com">https://lyte2d.com</a> OSS/free Lua game framework. MIT license</li>
 	<li><a href="https://lmaopilot.com">https://lmaopilot.com</a> (Alpha) Simple AI code pilot for VSCode. (Previously OSS)</li>
-</ul>
-
-<h3>OSS</h3>
-<ul>
-	<li><a href="https://github.com/lyte2d/lyte2d">lyte</a> Lyte2d source code</li>
+	<li><a href="https://lyte2d.com">https://lyte2d.com</a> OSS/free Lua game framework. MIT license</li>
+	<ul><li><a href="https://github.com/lyte2d/lyte2d"></a> Lyte2d source code</li></ul>
 	<li><a href="https://github.com/morew4rd/ryte">ryte</a> An experiment of porting Lyte2D's core sources to Zig (parked)</li>
+	<ul><li>more such experiments on github and elsewhere</li></ul>
 	<li><a href="https://github.com/morew4rd/moreward.h">moreward.h</a> Base C99 library with dynamic lists, dicts and strbufs as a starter</li>
-	<li>... and more on my <a href="https://github.com/morew4rd">github page</a></li>
-
+	<li>... and more OSS on my <a href="https://github.com/morew4rd">github page</a></li>
 </ul>
+
+
+<br />
+
 
 <h3>Socials</h3>
 <ul>
@@ -43,6 +56,8 @@ const numberOfLatestPostsToShow = 3;
 #}
 </ul>
 
+<br />
+
 {# <h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3> #}
 <h3>Latest posts</h3>
 
@@ -53,7 +68,8 @@ const numberOfLatestPostsToShow = 3;
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
 {# <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p> #}
-<p>More posts in <a href="blog.njk">the archive</a>.</p>
+
+<p>...more posts in <a href="blog.njk">the archive</a>.</p>
 {% endif %}
 
 
