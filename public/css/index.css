@@ -229,10 +229,12 @@ header {
 .postlist-item:before {
 	display: inline-block;
 	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
+	/* mg: this below is the number of the post (count id) */
+	/* content: "" counter(start-from, decimal-leading-zero) ". "; */
+	/* content: "> "; */
 	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
+	/* text-align: right; */
+	/* margin-left: -1.5rem; */
 }
 .postlist-date,
 .postlist-item:before {
@@ -241,6 +243,9 @@ header {
 }
 .postlist-date {
 	word-spacing: -0.5px;
+	color: var(--color-gray-50);
+	margin-top: 0.3rem;
+	margin-bottom: 0.5rem;
 }
 .postlist-link {
 	/* 19px /16 */
@@ -252,6 +257,16 @@ header {
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
+}
+.postlist-nolink {
+	/* mg */
+	/* font-weight: 700; */
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	/* text-underline-position: from-font; */
+	/* text-underline-offset: 0; */
+	/* text-decoration-thickness: 1px; */
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;

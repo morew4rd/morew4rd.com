@@ -43,7 +43,8 @@ const numberOfLatestPostsToShow = 3;
 #}
 </ul>
 
-<h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3>
+{# <h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3> #}
+<h3>Latest posts</h3>
 
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
@@ -51,7 +52,8 @@ const numberOfLatestPostsToShow = 3;
 
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+{# <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p> #}
+<p>More posts <a href="blog.njk">the archive</a>.</p>
 {% endif %}
 
 
