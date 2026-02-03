@@ -36,11 +36,11 @@ Watch this Ted Bendixson&#39;s &amp;quot;Better Software Conference 2025&amp;quo
     </item>
     <item>
       <title>Docker for consistency</title>
-      <link>https://morew4rd.com/blog/2025/04/06/docker_consitency/</link>
+      <link>https://morew4rd.com/blog/2025/04/06/docker_consistency/</link>
       <description>&lt;h2 id=&quot;docker-and-docker-compose&quot;&gt;Docker and docker-compose&lt;/h2&gt;
 &lt;p&gt;I run all my non-static sites/webapps on a small VPS. I have very little installed on the VPS. For example, although most of my sites are node.js these days, I don&#39;t have node or npm installed there. But I do have &lt;code&gt;docker&lt;/code&gt; along with &lt;code&gt;make&lt;/code&gt; and &lt;code&gt;git&lt;/code&gt; installed.&lt;/p&gt;
 &lt;h2 id=&quot;vps-use&quot;&gt;VPS use&lt;/h2&gt;
-&lt;p&gt;Sites, DBs, helpers (like monitoring tools) all run in docker containers, and are kept up via &lt;code&gt;docker compose&lt;/code&gt;. This is sort of a setup-and-forget thing for the most part which is nice. But see &lt;a href=&quot;https://morew4rd.com/blog/2025/04/06/docker_consitency/#beware&quot;&gt;the beware section below&lt;/a&gt; for some warnings!&lt;/p&gt;
+&lt;p&gt;Sites, DBs, helpers (like monitoring tools) all run in docker containers, and are kept up via &lt;code&gt;docker compose&lt;/code&gt;. This is sort of a setup-and-forget thing for the most part which is nice. But see &lt;a href=&quot;https://morew4rd.com/blog/2025/04/06/docker_consistency/#beware&quot;&gt;the beware section below&lt;/a&gt; for some warnings!&lt;/p&gt;
 &lt;h2 id=&quot;devbox-use-for-web-dev&quot;&gt;Devbox use for web dev&lt;/h2&gt;
 &lt;p&gt;Since I use the same image locally on my MacBook, my test environment during development is mostly a good representative of livesite environment.&lt;/p&gt;
 &lt;h2 id=&quot;consistent-builds-for-native-dev&quot;&gt;Consistent builds for native dev&lt;/h2&gt;
@@ -65,7 +65,7 @@ Watch this Ted Bendixson&#39;s &amp;quot;Better Software Conference 2025&amp;quo
 </description>
       <pubDate>Sun, 06 Apr 2025 02:30:00 PDT</pubDate>
       <dc:creator>moreward</dc:creator>
-      <guid>https://morew4rd.com/blog/2025/04/06/docker_consitency/</guid>
+      <guid>https://morew4rd.com/blog/2025/04/06/docker_consistency/</guid>
     </item>
     <item>
       <title>Makefiles for scripting</title>
