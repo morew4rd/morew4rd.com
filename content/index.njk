@@ -48,7 +48,7 @@ const numberOfLatestPostsToShow = 5;
 
 {# <h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3> #}
 
-<h3>Latest Plog Posts</h3>
+<h3>Latest Blog Posts</h3>
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 {% set postslistCounter = postsCount %}
 {% include "postslist.njk" %}
