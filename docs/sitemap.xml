@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 	
 	<url>
-		<loc>https://morew4rd.com/blog/</loc>
+		<loc>https://morew4rd.com/</loc>
 		<lastmod>2025-03-28</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://morew4rd.com/</loc>
+		<loc>https://morew4rd.com/about/</loc>
 		<lastmod>2025-03-28</lastmod>
 	</url>
 	
@@ -32,12 +32,17 @@
 	</url>
 	
 	<url>
-		<loc>https://morew4rd.com/blog/2026/02/shorts/001/</loc>
+		<loc>https://morew4rd.com/blog/shorts/0001/</loc>
 		<lastmod>2026-02-02</lastmod>
 	</url>
 	
 	<url>
-		<loc>https://morew4rd.com/blog/2026/02/shorts/002/</loc>
+		<loc>https://morew4rd.com/blog/shorts/0002/</loc>
 		<lastmod>2026-02-02</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://morew4rd.com/blog/shorts/0003/</loc>
+		<lastmod>2026-02-03</lastmod>
 	</url>
 </urlset>

@@ -1,82 +1,10 @@
 ---js
 const eleventyNavigation = {
-	key: "About",
+	key: "Posts",
 	order: 1
 };
-
-const numberOfLatestPostsToShow = 3;
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h3>Posts</h3>
 
-{# <img src="{{ 'img/morehead.png' | url }}" style="width: 12%; height: auto;"  alt="pixel art of a head" /> #}
-
-
-<h3>Hello 👋</h3>
-<p>Welcome to my homepage.</p>
-<p>
-	I sometimes post here. I also link to my projects.
-	I'm currently working on a new project.
-</p>
-<p>
-	To be announced, watch this space.
-</p>
-
-<br />
-
-<h3>Previous projects</h3>
-<ul>
-	<li><a href="https://lmaopilot.com">https://lmaopilot.com</a> (Alpha) Simple AI code pilot for VSCode. (Previously OSS)</li>
-	<li><a href="https://lyte2d.com">https://lyte2d.com</a> OSS/free Lua game framework. MIT license</li>
-	<ul><li><a href="https://github.com/lyte2d/lyte2d"></a> Lyte2d source code</li></ul>
-	<li><a href="https://github.com/morew4rd/ryte">ryte</a> An experiment of porting Lyte2D's core sources to Zig (parked)</li>
-	<ul><li>more such experiments on github and elsewhere</li></ul>
-	<li><a href="https://github.com/morew4rd/moreward.h">moreward.h</a> Base C99 library with dynamic lists, dicts and strbufs as a starter</li>
-	<li>... and more OSS on my <a href="https://github.com/morew4rd">github page</a></li>
-</ul>
-
-
-<br />
-
-
-<h3>Socials</h3>
-<ul>
-
-	{# <li>website: <a href="https:morew4rd.com">https:morew4rd.com</a></li> #}
-	<li>x.com:
-		<a href="https://x.com/morew4rd">
-		https://x.com/morew4rd
-	</a></li>
-	<li>github: <a href="https://github.com/morew4rd">https://github.com/morew4rd</a></li>
-	<li>itch.io: <a href="https://morew4rd.itch.io">https://morew4rd.itch.io</a></li>
-{#
-	<li>substack: <a href="https://moreward.substack.com/">https://moreward.substack.com/</a> (mostly inactive)</li>
-	<li>bluesky: <a href="https://bsky.app/profile/moreward.bsky.social">https://bsky.app/profile/moreward.bsky.social</a> (mostly inactive)</li>
-	<li>mastodon: <a href="https://mastodon.gamedev.place/@more">https://mastodon.gamedev.place/@more</a> (mostly inactive)</li>
-#}
-</ul>
-
-<br />
-
-{# <h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3> #}
-<h3>Latest posts</h3>
-
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
+{% set postslist = collections.posts %}
 {% include "postslist.njk" %}
-
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-{# <p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p> #}
-
-<p>...more posts in <a href="blog.njk">the archive</a>.</p>
-{% endif %}
-
-
-{# List every content page in the project #}
-{# <ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul> #}
-

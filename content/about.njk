@@ -1,0 +1,72 @@
+---js
+const eleventyNavigation = {
+	key: "About",
+	order: 2
+};
+
+const numberOfLatestPostsToShow = 3;
+---
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+
+{# <img src="{{ 'img/morehead.png' | url }}" style="width: 12%; height: auto;"  alt="pixel art of a head" /> #}
+
+
+<h3>Hello fellow anon 👋</h3>
+
+<p>
+	I'm currently working on a exciting new project. To be announced soon. Follow me on twitter or here for upodates.
+</p>
+
+
+<h3>Previous projects</h3>
+<ul>
+	<li><a href="https://lmaopilot.com">https://lmaopilot.com</a> Simple AI code pilot for VSCode. (Taken private)</li>
+	<li><a href="https://lyte2d.com">https://lyte2d.com</a> Tiny Lua game engine. MIT license</li>
+	<ul><li><a href="https://github.com/lyte2d/lyte2d">code repo at github</a> </li></ul>
+	<li>... and more OSS on my <a href="https://github.com/morew4rd">github</a></li>
+</ul>
+
+
+
+<h3>Socials</h3>
+<ul>
+
+	{# <li>website: <a href="https:morew4rd.com">https:morew4rd.com</a></li> #}
+	<li>x.com:
+		<a href="https://x.com/morew4rd">
+		https://x.com/morew4rd
+	</a></li>
+	<li>github: <a href="https://github.com/morew4rd">https://github.com/morew4rd</a></li>
+	<li>itch.io: <a href="https://morew4rd.itch.io">https://morew4rd.itch.io</a></li>
+{#
+	<li>substack: <a href="https://moreward.substack.com/">https://moreward.substack.com/</a> (mostly inactive)</li>
+	<li>bluesky: <a href="https://bsky.app/profile/moreward.bsky.social">https://bsky.app/profile/moreward.bsky.social</a> (mostly inactive)</li>
+	<li>mastodon: <a href="https://mastodon.gamedev.place/@more">https://mastodon.gamedev.place/@more</a> (mostly inactive)</li>
+#}
+</ul>
+
+<br />
+
+{# <h3>Latest {{ latestPostsCount }} post{% if latestPostsCount != 1 %}s{% endif %}</h3> #}
+{#
+<h3>Latest posts</h3>
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "postslist.njk" %}
+
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+
+{% if morePosts > 0 %}
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+<p>...more posts in <a href="blog.njk">the archive</a>.</p>
+{% endif %}
+ #}
+
+{# List every content page in the project #}
+{# <ul>
+	{%- for entry in collections.all %}
+	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
+	{%- endfor %}
+</ul> #}
+

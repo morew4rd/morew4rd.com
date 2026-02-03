@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Makefiles for scripting</title>
+		<title>morew4rd dot com</title>
 		<meta name="description" content="I am writing about my thoughts and experiences.">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="morew4rd dot com">
 		
@@ -523,125 +523,19 @@ header {
 		<main id="skip">
 			
 
-<h1 id="makefiles-for-scripting">Makefiles for scripting</h1>
+<h1></h1>
 
 
 
-<p>GNU <code>make</code> is an old tool designed to build C codebases. I don't use it for that purpose though. For projects that are larger than a few files, I just pull cmake these days.</p>
-<p>But... make itself is still very useful to get basic scripting going in my codebases and elsewhere.</p>
-<p>I use Makefiles to</p>
-<ul>
-<li>Call cmake/zig build/npm etc with various options to build projects</li>
-<li>Execute tests</li>
-<li>Build/run docker images</li>
-<li>Deploy sites and apps</li>
-<li>And more...</li>
-</ul>
-<h2 id="basics-of-make">Basics of make</h2>
-<p>So how do you use it? You'd typically use it with a dev project, so let's assume you're in your project's top level directory:</p>
-<ul>
-<li>You write a <code>Makefile</code>, like the one below</li>
-<li>Call the default target with <code>make</code></li>
-<li>Call any other target with <code>make config-test</code></li>
-<li>Override variables with <code>make build-tests BUILD_DIR=../tmp/test</code></li>
-</ul>
-<p>Here's a very simple example:</p>
-<pre class="language-Makefile" tabindex="0"><code class="language-Makefile"># Makefile comments start with a `#` and run till the end of the line.
-
-# Targets are defined with a name and a colon.  First ever target in the file is the "default"
-# It is the target that runs if there are no arguments passed to `make`.
-# The dependencies of the target are listed after the colon, whitespace separated
-# Those are executed before the target tasks
-# Tasks that the target will run in cmdline, one by one, are listed below the target name, indented with `tab`s (not spaces!)
-
-my-default-target: run-tests
-	echo "done."
-
-# You can define variables like so
-# You can override these varibles from command line while invoking make.
-
-BUILD_DIR = ./_build
-
-# Some other targets below:
-
-clean-test:
-	rm -rf ${BUILD_DIR}
-
-config-test:
-	mkdir -p ${BUILD_DIR}
-
-build-test:
-	cc -o ${BUILD_DIR}/test -I src src/apic.c test/test.c
-
-# This is the target that `my-default-target` depends on.
-# And it depends on a few others.
-
-run-test: clean-test config-test build-test
-	${BUILD_DIR}/test > ${BUILD_DIR}/a.txt
-	cat ${BUILD_DIR}/a.txt
-</code></pre>
-<p>The idea is, instead of many script files, all scripting tasks are contained in a single location. In zsh (and others probably) you can get a tab completion for the target names, so it's very comfy.</p>
-<h2 id="be-careful-with-weird-parts">Be careful with &quot;weird&quot; parts</h2>
-<ul>
-<li>Indentation should be done with tabs. Editors usually are aware of this, at least vscode is.</li>
-<li>Target names should not match the files in the folder where Makefile resides. This is due to the fact that <code>make</code> is actually made to build <code>NAME.c</code> files. If you have to have targets matching filenames, look up <code>.PHONY</code> targets. In order to keep things simple, I use a <code>-</code> in my target names and I almost never have filenames with that.</li>
-</ul>
-<h2 id="advanced-zsh-tab-completions">Advanced: zsh tab completions</h2>
-<p>Add the following in your <code>~/.zshrc</code>:</p>
-<pre class="language-sh" tabindex="0"><code class="language-sh"><span class="token comment"># makefile completions</span>
-autoload <span class="token parameter variable">-Uz</span> compinit
-compinit
-<span class="token comment"># only makefile targets, not files!</span>
-zstyle <span class="token string">':completion::complete:make::'</span> tag-order targets variables</code></pre>
-<h2 id="advanced-show-help-target">Advanced: <code>show-help</code> target</h2>
-<p>See this example, it's actually this blog's current <code>Makefile</code>:</p>
-<pre class="language-make" tabindex="0"><code class="language-make">-default: watch-dev
-
-##########
-show-help: ## show help
-	@echo "Available targets:"
-	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-30s\033[0m %s\n", $$1, $$2}'
-	@echo "Defined variables:"
-	@grep -E '^[a-zA-Z0-9_]+\s*=\s*[^#]*## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = "\s*=\s*.*?## "}; {printf "  \033[33m%-30s\033[0m %s\n", $$1, $$2}'
-##########
-
-
-ELEV = npx @11ty/eleventy  --output=docs
-
-clean-site: ## clean docs folder (CAREFUL)
-	rm -rf docs
-	mkdir docs
-
-watch-dev: clean-site ## serve dev server in watch mode
-	${ELEV} --serve
-
-build-site: clean-site ## build site
-	${ELEV}
-
-serve-site: ## serve from docs for testing
-	npx http-server docs
-
-DEPLOY-SITE: build-site  ## DEPLOYS TO PROD
-	git add -A
-	git commit -m "update"
-	git push origin main</code></pre>
-<p>In this version, we have a <code>show-help</code> target which is also set to display the list of targets and variables with some shell magic.  All the targets and variables that have <code>## ...</code> comments after them will be listed, along with the comment, which is supposed to be the help text for that target/variable.</p>
-<pre class="language-sh" tabindex="0"><code class="language-sh">mg ~/code/morew4rd.com $ <span class="token function">make</span> show-help
-Available targets:
-  DEPLOY-SITE                    DEPLOYS TO PROD
-  build-site                     build site
-  clean-site                     clean docs folder <span class="token punctuation">(</span>CAREFUL<span class="token punctuation">)</span>
-  serve-site                     serve from docs <span class="token keyword">for</span> testing
-  show-help                      show <span class="token builtin class-name">help</span>
-  watch-dev                      serve dev server <span class="token keyword">in</span> <span class="token function">watch</span> mode</code></pre>
+<p>Send it. Build to release. Don't spend time on unnecessary tech noodling.</p>
 
 
 <br>
 <ul class="post-metadata">
 	
-	<time class="postlist-date" datetime="2025-04-05">@morew4rd - [2025-Apr-05, 00:00]</time>
+	<time class="postlist-date" datetime="2026-02-03">@morew4rd - [2026-Feb-03, 07:03]</time>
 </ul>
-<ul class="links-nextprev"><li class="links-nextprev-prev"><a href="/blog/2025/04/04/hello_anon/"> ← [Previous]<br> Hello anon</a></li><li class="links-nextprev-next"><a href="/blog/2025/04/06/docker_consitency/">Next →<br>Docker for consistency</a></li>
+<ul class="links-nextprev"><li class="links-nextprev-prev"><a href="/blog/shorts/0002/"> ← [Previous]<br> </a></li>
 </ul>
 
 
@@ -651,7 +545,7 @@ Available targets:
 
 		
 
-		<!-- This page `/blog/2025/04/05/makefile_scripting/` was built on 2026-02-03T15:03:44.904Z -->
+		<!-- This page `/blog/shorts/0003/` was built on 2026-02-03T15:03:44.903Z -->
 		
 	</body>
 </html>
