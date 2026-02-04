@@ -1,0 +1,55 @@
+:root.light {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+:root:not(.light) {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+}
+
+.theme-icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+:root.light .theme-icon {
+    background-image: url('/img/sun.svg');
+    color: white;
+}
+
+:root:not(.light) .theme-icon {
+    background-image: url('/img/moon.svg');
+    color: white;
+}
+
+.sr-only {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
