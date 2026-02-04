@@ -532,12 +532,12 @@ h3 {
 }
 
 :root.light .theme-icon {
-    background-image: url('/img/sun.svg');
-    color: white;
+	background-image: url('/img/sun.svg');
+	color: white
 }
 
 :root:not(.light) .theme-icon {
-    background-image: url('/img/moon.svg');
+	background-image: url('/img/moon.svg');
     color: white;
 }
 
@@ -598,14 +598,17 @@ function toggleLocalStorageItem() {
   }
 }
 
-if (isLight()) {
-  toggleRootClass();
-}
 
 document.querySelector(".theme-icon").addEventListener("click", () => {
   toggleLocalStorageItem();
   toggleRootClass();
-});</script>
+});
+
+// light mode by defult
+if (!isLight()) {
+  toggleRootClass();
+}
+</script>
 					</li>
 				</ul>
 			</nav>
@@ -636,7 +639,7 @@ Watch this Ted Bendixson's &quot;Better Software Conference 2025&quot; talk on <
 
 		
 
-		<!-- This page `/blog/shorts/0003/` was built on 2026-02-04T02:06:39.912Z -->
+		<!-- This page `/blog/shorts/0003/` was built on 2026-02-04T02:22:28.778Z -->
 		
 	</body>
 </html>

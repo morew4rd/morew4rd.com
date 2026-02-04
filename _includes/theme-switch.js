@@ -14,11 +14,13 @@ function toggleLocalStorageItem() {
   }
 }
 
-if (isLight()) {
-  toggleRootClass();
-}
 
 document.querySelector(".theme-icon").addEventListener("click", () => {
   toggleLocalStorageItem();
   toggleRootClass();
 });
+
+// light mode by defult
+if (!isLight()) {
+  toggleRootClass();
+}

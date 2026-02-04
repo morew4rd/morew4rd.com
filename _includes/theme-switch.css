@@ -39,12 +39,12 @@
 }
 
 :root.light .theme-icon {
-    background-image: url('/img/sun.svg');
-    color: white;
+	background-image: url('/img/sun.svg');
+	color: white
 }
 
 :root:not(.light) .theme-icon {
-    background-image: url('/img/moon.svg');
+	background-image: url('/img/moon.svg');
     color: white;
 }
 
