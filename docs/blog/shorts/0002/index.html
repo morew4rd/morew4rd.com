@@ -136,6 +136,55 @@ pre[class*="language-"] {
 .token.deleted {
 	color: red;
 }
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+/* MG */
+pre[class*="language-"] {
+	font-size: 0.8em;
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
 :root {
@@ -464,16 +513,28 @@ h3 {
 }
 
 :root:not(.light) {
-		--color-gray-20: #e0e0e0;
+		/* --color-gray-20: #e0e0e0;
 		--color-gray-50: #C0C0C0;
 		--color-gray-90: #dad8d8;
 
 		/* --text-color is assigned to --color-gray-_ above */
+		/*
 		--text-color-link: #1493fb;
 		--text-color-link-active: #6969f7;
 		--text-color-link-visited: #a6a6f8;
 
-		--background-color: #15202b;
+		--background-color: #15202b; */
+	--color-gray-00: #000000;
+	--color-gray-50: #C0C0C0;
+	--color-gray-99: #e0e0e0;
+	--color-blue-link: #42a0ed;
+
+	--background-color: var(--color-gray-00);
+	--text-color: var(--color-gray-99);
+
+	--text-color-link: var(--color-blue-link);
+	--text-color-link-active: var(--color-blue-link);
+	--text-color-link-visited: var(--color-blue-link);
 }
 
 .theme-icon {
@@ -578,7 +639,6 @@ if (!isLight()) {
 
 
 
-
 <h1></h1>
 
 
@@ -600,7 +660,7 @@ if (!isLight()) {
 
 		
 
-		<!-- This page `/blog/shorts/0002/` was built on 2026-02-04T02:58:09.247Z -->
+		<!-- This page `/blog/shorts/0002/` was built on 2026-02-04T07:44:25.143Z -->
 		
 	</body>
 </html>
