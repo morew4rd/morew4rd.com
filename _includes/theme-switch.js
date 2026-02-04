@@ -2,6 +2,7 @@ function isLight() {
   return localStorage.getItem("light-mode");
 }
 
+
 function toggleRootClass() {
   document.querySelector(":root").classList.toggle("light");
 }

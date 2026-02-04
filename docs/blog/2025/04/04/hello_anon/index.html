@@ -8,16 +8,16 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="morew4rd dot com">
 		
 		<style>/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
+ * prism.js Dark theme for JavaScript, CSS and HTML
+ * Based on the slides of the talk “/Reg(exp){2}lained/”
+ * @author Lea Verou
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-	color: #f8f8f2;
+	color: white;
 	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	text-shadow: 0 -.1em .2em black;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 1em;
 	text-align: left;
@@ -37,23 +37,34 @@ pre[class*="language-"] {
 	hyphens: none;
 }
 
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+	background: hsl(30, 20%, 25%);
+}
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
-	border-radius: 0.3em;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #272822;
+	border: .3em solid hsl(30, 20%, 40%);
+	border-radius: .5em;
+	box-shadow: 1px 1px .5em black inset;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
+	padding: .15em .2em .05em;
 	border-radius: .3em;
+	border: .13em solid hsl(30, 20%, 40%);
+	box-shadow: 1px 1px .3em -.1em black inset;
 	white-space: normal;
 }
 
@@ -61,11 +72,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #8292a2;
+	color: hsl(30, 20%, 50%);
 }
 
 .token.punctuation {
-	color: #f8f8f2;
+	opacity: .7;
 }
 
 .token.namespace {
@@ -74,15 +85,11 @@ pre[class*="language-"] {
 
 .token.property,
 .token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #f92672;
-}
-
 .token.boolean,
-.token.number {
-	color: #ae81ff;
+.token.number,
+.token.constant,
+.token.symbol {
+	color: hsl(350, 40%, 70%);
 }
 
 .token.selector,
@@ -91,7 +98,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a6e22e;
+	color: hsl(75, 70%, 60%);
 }
 
 .token.operator,
@@ -100,23 +107,18 @@ pre[class*="language-"] {
 .language-css .token.string,
 .style .token.string,
 .token.variable {
-	color: #f8f8f2;
+	color: hsl(40, 90%, 60%);
 }
 
 .token.atrule,
 .token.attr-value,
-.token.function,
-.token.class-name {
-	color: #e6db74;
-}
-
 .token.keyword {
-	color: #66d9ef;
+	color: hsl(350, 40%, 70%);
 }
 
 .token.regex,
 .token.important {
-	color: #fd971f;
+	color: #e90;
 }
 
 .token.important,
@@ -130,54 +132,9 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-/*
- * New diff- syntax
- */
 
-pre[class*="language-diff-"] {
-	--eleventy-code-padding: 1.25em;
-	padding-left: var(--eleventy-code-padding);
-	padding-right: var(--eleventy-code-padding);
-}
-/* MG */
-pre[class*="language-"] {
-	font-size: 0.8em;
-}
 .token.deleted {
-	background-color: hsl(0, 51%, 37%);
-	color: inherit;
-}
-.token.inserted {
-	background-color: hsl(126, 31%, 39%);
-	color: inherit;
-}
-
-/* Make the + and - characters unselectable for copy/paste */
-.token.prefix.unchanged,
-.token.prefix.inserted,
-.token.prefix.deleted {
-	-webkit-user-select: none;
-	user-select: none;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-.token.prefix.inserted,
-.token.prefix.deleted {
-	width: var(--eleventy-code-padding);
-	background-color: rgba(0,0,0,.2);
-}
-
-/* Optional: full-width background color */
-.token.inserted:not(.prefix),
-.token.deleted:not(.prefix) {
-	display: block;
-	margin-left: calc(-1 * var(--eleventy-code-padding));
-	margin-right: calc(-1 * var(--eleventy-code-padding));
-	text-decoration: none; /* override del, ins, mark defaults */
-	color: inherit; /* override del, ins, mark defaults */
+	color: red;
 }
 /* This is an arbitrary CSS string added to the bundle */
 /* Defaults */
@@ -426,11 +383,11 @@ h3 {
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-99);
+	/* color: var(--color-gray-99); */
 }
 .postlist-date {
 	word-spacing: -0.5px;
-	color: var(--color-gray-50);
+	/* color: var(--color-gray-99); */
 	margin-top: 0.3rem;
 	margin-bottom: 0.2rem;
 	margin-left: 2.0rem;
@@ -586,6 +543,7 @@ h3 {
   return localStorage.getItem("light-mode");
 }
 
+
 function toggleRootClass() {
   document.querySelector(":root").classList.toggle("light");
 }
@@ -617,6 +575,10 @@ if (!isLight()) {
 		<main id="skip">
 			
 
+
+
+
+
 <h1 id="hello-anon">Hello anon</h1>
 
 
@@ -647,7 +609,7 @@ if (!isLight()) {
 
 		
 
-		<!-- This page `/blog/2025/04/04/hello_anon/` was built on 2026-02-04T02:22:28.778Z -->
+		<!-- This page `/blog/2025/04/04/hello_anon/` was built on 2026-02-04T02:58:09.247Z -->
 		
 	</body>
 </html>
