@@ -14,7 +14,7 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addFilter("mgReadableDateTime", (dateObj, format, zone) => {
 		// return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "yyyy-LLL-dd, hh:mm");
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "yyyy-LLL-dd, HH:mm");
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "yyyy-LLL-dd HH:mm");
 	});
 
 
